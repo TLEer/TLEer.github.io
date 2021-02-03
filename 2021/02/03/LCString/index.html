@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>LCS | TLEer&#39;s Blog</title>
+  <title>LCString | TLEer&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Longest Common Subsequencedp[x][y]表示s[1x]和t[1y]的最长公共子序列长度。答案为dp[S.len][T.len] 分三种情况  s[x]不在公共子序列中：dp[x][y]&#x3D;dp[x-1][y]继承上一次的状态 t[x]不在公共子序列中：dp[x][y]&#x3D;dp[x][y-1]继承上一次的状态 s[x]&#x3D;t[y]且s[x]与t[y]在公共子序列中 ：dp[x]">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;algorithm&gt;using namespace std;string a, b;int dp[1001][1001], ans;int main()&amp;#123;  cin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LCS">
-<meta property="og:url" content="http://tleer.github.io/2021/02/03/LCS/index.html">
+<meta property="og:title" content="LCString">
+<meta property="og:url" content="http://tleer.github.io/2021/02/03/LCString/index.html">
 <meta property="og:site_name" content="TLEer&#39;s Blog">
-<meta property="og:description" content="Longest Common Subsequencedp[x][y]表示s[1x]和t[1y]的最长公共子序列长度。答案为dp[S.len][T.len] 分三种情况  s[x]不在公共子序列中：dp[x][y]&#x3D;dp[x-1][y]继承上一次的状态 t[x]不在公共子序列中：dp[x][y]&#x3D;dp[x][y-1]继承上一次的状态 s[x]&#x3D;t[y]且s[x]与t[y]在公共子序列中 ：dp[x]">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;algorithm&gt;using namespace std;string a, b;int dp[1001][1001], ans;int main()&amp;#123;  cin">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-02-03T00:00:20.000Z">
-<meta property="article:modified_time" content="2021-02-03T01:13:01.600Z">
+<meta property="article:published_time" content="2021-02-03T01:12:34.000Z">
+<meta property="article:modified_time" content="2021-02-03T01:13:12.656Z">
 <meta property="article:author" content="TLEer">
 <meta property="article:tag" content="最长公共">
 <meta name="twitter:card" content="summary">
@@ -74,10 +74,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-LCS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-LCString" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/02/03/LCS/" class="article-date">
-  <time class="dt-published" datetime="2021-02-03T00:00:20.000Z" itemprop="datePublished">2021-02-03</time>
+    <a href="/2021/02/03/LCString/" class="article-date">
+  <time class="dt-published" datetime="2021-02-03T01:12:34.000Z" itemprop="datePublished">2021-02-03</time>
 </a>
     
   </div>
@@ -88,7 +88,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      LCS
+      LCString
     </h1>
   
 
@@ -96,19 +96,11 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="Longest-Common-Subsequence"><a href="#Longest-Common-Subsequence" class="headerlink" title="Longest Common Subsequence"></a>Longest Common Subsequence</h1><p>dp[x][y]表示s[1<del>x]和t[1</del>y]的最长公共子序列长度。答案为dp[S.len][T.len]</p>
-<p>分三种情况</p>
-<ol>
-<li>s[x]不在公共子序列中：dp[x][y]=dp[x-1][y]继承上一次的状态</li>
-<li>t[x]不在公共子序列中：dp[x][y]=dp[x][y-1]继承上一次的状态</li>
-<li>s[x]=t[y]且s[x]与t[y]在公共子序列中 ：dp[x][y]=dp[x-1][y-1]+1长度+1<br>在程序中需要<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(s[i<span class="number">-1</span>]==t[j<span class="number">-1</span>])</span><br><span class="line">    dp[i][j]=max(dp[i][j],dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-边界条件：dp[0][y]=0;dp[x][0]=0;</li>
-</ol>
-
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> a, b;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">1001</span>][<span class="number">1001</span>], ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">  <span class="keyword">int</span> lena = a.length(), lenb = b.length();</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; lena;i++)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; lenb;j++)</span><br><span class="line">	&#123;</span><br><span class="line">	  <span class="keyword">if</span>(a[i] == b[j])</span><br><span class="line">	    &#123;</span><br><span class="line">	      <span class="keyword">if</span>(i == <span class="number">0</span> ||j == <span class="number">0</span>)</span><br><span class="line">		dp[i][j] = <span class="number">1</span>;</span><br><span class="line">	      <span class="keyword">else</span></span><br><span class="line">		dp[i][j] = max(dp[i][j],dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span>);</span><br><span class="line">	      ans = max(ans, dp[i][j]);</span><br><span class="line">	    &#125;</span><br><span class="line">	  <span class="keyword">else</span></span><br><span class="line">	    dp[i][j] = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*Substring*/</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tleer.github.io/2021/02/03/LCS/" data-id="ckkoqlypb0001avjxhtt48yzr" data-title="LCS" class="article-share-link">Teilen</a>
+      <a data-url="http://tleer.github.io/2021/02/03/LCString/" data-id="ckkoqlype0002avjx08ur25xx" data-title="LCString" class="article-share-link">Teilen</a>
       
       
       
@@ -120,19 +112,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/02/03/P1038/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          P1038
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/02/03/LIS/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/02/03/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">LIS</div>
+      <div class="article-nav-title">Hello World</div>
     </a>
   
 </nav>
