@@ -6,15 +6,15 @@
   
   <title>P1006 [NOIP2008 提高组] 传纸条 | TLEer&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DP数组： 第一维度维护的是在传的过程中纵坐标与横坐标的和。 在同一斜线上，剩下表示两个点的从坐标就可以表示这两个点的位置。第二维度维护的是相对在左边的点的纵坐标。 第三维度维护的是相对在右边的点的纵坐标。 当查询一个情况时，只有四种情况可以到他 F[sum][i][j]&#x3D;max{F[sum-1][i][j]+F[k-1][i][j-1]+F[k-1][i-1][j]+F[k-1][i-1][j-">
+  <meta name="description" content="DP数组： 第一维度维护的是在传的过程中纵坐标与横坐标的和。 在同一斜线上，剩下表示两个点的从坐标就可以表示这两个点的位置。第二维度维护的是相对在左边的点的纵坐标。 第三维度维护的是相对在右边的点的纵坐标。 当查询一个情况时，只有四种情况可以到他 1F[sum][i][j]&#x3D;max&amp;#123;F[sum-1][i][j]+F[sum-1][i][j-1]+F[sum-1][i-1][j]+F[su">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P1006 [NOIP2008 提高组] 传纸条">
 <meta property="og:url" content="http://tleer.github.io/2021/02/04/p1006/index.html">
 <meta property="og:site_name" content="TLEer&#39;s Blog">
-<meta property="og:description" content="DP数组： 第一维度维护的是在传的过程中纵坐标与横坐标的和。 在同一斜线上，剩下表示两个点的从坐标就可以表示这两个点的位置。第二维度维护的是相对在左边的点的纵坐标。 第三维度维护的是相对在右边的点的纵坐标。 当查询一个情况时，只有四种情况可以到他 F[sum][i][j]&#x3D;max{F[sum-1][i][j]+F[k-1][i][j-1]+F[k-1][i-1][j]+F[k-1][i-1][j-">
+<meta property="og:description" content="DP数组： 第一维度维护的是在传的过程中纵坐标与横坐标的和。 在同一斜线上，剩下表示两个点的从坐标就可以表示这两个点的位置。第二维度维护的是相对在左边的点的纵坐标。 第三维度维护的是相对在右边的点的纵坐标。 当查询一个情况时，只有四种情况可以到他 1F[sum][i][j]&#x3D;max&amp;#123;F[sum-1][i][j]+F[sum-1][i][j-1]+F[sum-1][i-1][j]+F[su">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-02-03T22:36:59.000Z">
-<meta property="article:modified_time" content="2021-02-03T22:40:24.594Z">
+<meta property="article:modified_time" content="2021-02-03T23:51:29.266Z">
 <meta property="article:author" content="TLEer">
 <meta property="article:tag" content="luogu">
 <meta property="article:tag" content="坐标DP">
@@ -101,13 +101,19 @@
 <h3 id="在同一斜线上，剩下表示两个点的从坐标就可以表示这两个点的位置。"><a href="#在同一斜线上，剩下表示两个点的从坐标就可以表示这两个点的位置。" class="headerlink" title="在同一斜线上，剩下表示两个点的从坐标就可以表示这两个点的位置。"></a>在同一斜线上，剩下表示两个点的从坐标就可以表示这两个点的位置。</h3><p>第二维度维护的是相对在左边的点的纵坐标。</p>
 <p>第三维度维护的是相对在右边的点的纵坐标。</p>
 <p>当查询一个情况时，只有四种情况可以到他</p>
-<p>F[sum][i][j]=max{F[sum-1][i][j]+F[k-1][i][j-1]+F[k-1][i-1][j]+F[k-1][i-1][j-1]；</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F[sum][i][j]=max&#123;F[sum<span class="number">-1</span>][i][j]+F[sum<span class="number">-1</span>][i][j<span class="number">-1</span>]+F[sum<span class="number">-1</span>][i<span class="number">-1</span>][j]+F[sum<span class="number">-1</span>][i<span class="number">-1</span>][j<span class="number">-1</span>]&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<p>sum-1 i j 即为i,j在横坐标上左移1</p>
+<p>sum-1 i-1 j 即为i在纵坐标上上移1</p>
+<p>sum-1 i j-1 同理</p>
+<p>sum-1 i-1 j-1 i,j在纵坐标上上移1</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://tleer.github.io/2021/02/04/p1006/" data-id="ckkq1gicn000h4rjx4qh566e6" class="article-share-link" data-share="baidu" data-title="P1006 [NOIP2008 提高组] 传纸条">Share</a>
+        <a data-url="http://tleer.github.io/2021/02/04/p1006/" data-id="ckkq35afs000hktjxdo35aitd" class="article-share-link" data-share="baidu" data-title="P1006 [NOIP2008 提高组] 传纸条">Share</a>
       
 
       
