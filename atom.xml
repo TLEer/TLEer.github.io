@@ -6,7 +6,7 @@
   <link href="http://tleer.github.io/atom.xml" rel="self"/>
   
   <link href="http://tleer.github.io/"/>
-  <updated>2021-02-03T08:59:00.435Z</updated>
+  <updated>2021-02-03T10:02:49.539Z</updated>
   <id>http://tleer.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>int128 奇技淫巧</title>
+    <link href="http://tleer.github.io/2021/02/03/int128/"/>
+    <id>http://tleer.github.io/2021/02/03/int128/</id>
+    <published>2021-02-03T09:59:07.000Z</published>
+    <updated>2021-02-03T10:02:49.539Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol><li>不支持printf，scanf，cin，cout，自己输入输出</li><li>至多可存38位</li><li>运算同int</li></ol><a id="more"></a><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function">__int128 <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  __int128 x=<span class="number">0</span>,f=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span>(ch&lt;<span class="string">&#x27;0&#x27;</span>||ch&gt;<span class="string">&#x27;9&#x27;</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(ch==<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            f=<span class="number">-1</span>;</span><br><span class="line">        ch=getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(ch&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;ch&lt;=<span class="string">&#x27;9&#x27;</span>)&#123;</span><br><span class="line">        x=x*<span class="number">10</span>+ch-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        ch=getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">__int128 <span class="title">print</span><span class="params">(_int128 x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(x &lt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      putchar(&#x27; - &#x27;);</span><br><span class="line">      x =- x;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">if</span>(x &gt; <span class="number">9</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      print(x / <span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  __int128 a, b;</span><br><span class="line">  a = read();</span><br><span class="line">  b = read();</span><br><span class="line">  print(a + b);</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;特点&quot;&gt;&lt;a href=&quot;#特点&quot; class=&quot;headerlink&quot; title=&quot;特点&quot;&gt;&lt;/a&gt;特点&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;不支持printf，scanf，cin，cout，自己输入输出&lt;/li&gt;
+&lt;li&gt;至多可存38位&lt;/li&gt;
+&lt;li&gt;运算同int&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    
+    <category term="奇技淫巧" scheme="http://tleer.github.io/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/"/>
+    
+  </entry>
   
   <entry>
     <title>nt错误大赏</title>
