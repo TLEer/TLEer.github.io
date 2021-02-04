@@ -125,7 +125,7 @@ body,
 }
 body {
   background: #eee;
-  font: 14px/1.6em "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font: 14px/1.6em "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 .outer {
@@ -254,7 +254,7 @@ body {
 .widget h5 a:hover,
 .article-entry h6 a:hover,
 .widget h6 a:hover {
-  color: #0083f4;
+  color: #e32d40;
 }
 .article-entry h2,
 .widget h2,
@@ -368,7 +368,7 @@ body {
   font-weight: bold;
 }
 #header {
-  height: 60px;
+  height: 150px;
   position: relative;
   border-bottom: 1px solid #ddd;
 }
@@ -410,7 +410,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #0083f4;
+  background: #21282e;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -427,7 +427,7 @@ body {
 #logo,
 #subtitle {
   text-decoration: none;
-  color: #000;
+  color: #fff;
   font-weight: 300;
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
@@ -435,7 +435,7 @@ body {
   font-size: 40px;
   line-height: 40px;
   letter-spacing: 2px;
-  background: #ddd;
+  background: #e32d40;
   padding: 5px 10px;
   border-radius: 5px;
 }
@@ -558,7 +558,7 @@ body {
   background: none;
   color: #000;
   width: 100%;
-  font: 13px "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font: 13px "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   outline: none;
 }
 .search-form-input::-webkit-search-results-decoration,
@@ -629,7 +629,7 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #0083f4;
+  color: #e32d40;
 }
 .article-entry {
   zoom: 1;
@@ -656,7 +656,6 @@ a.article-title:hover {
 .article-entry h5,
 .article-entry h6 {
   font-weight: bold;
-  font-family: "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
 }
 .article-entry h1,
 .article-entry h2,
@@ -668,7 +667,7 @@ a.article-title:hover {
   margin: 1.1em 0;
 }
 .article-entry a {
-  color: #0083f4;
+  color: #e32d40;
   text-decoration: none;
 }
 .article-entry a:hover {
@@ -705,7 +704,7 @@ a.article-title:hover {
   padding: 10px 0;
 }
 .article-entry blockquote {
-  font-family: "Fira code Regular", "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: "Microsoft Yahei", "Droid Serif", Georgia, Serif;
   margin: 1.6em 0;
   padding: 0 0.8em;
   border-left: 4px solid #ddd;
@@ -714,7 +713,7 @@ a.article-title:hover {
 .article-entry blockquote footer {
   font-size: 14px;
   margin: 1.6em 0;
-  font-family: "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .article-entry blockquote footer cite:before {
   content: "—";
@@ -743,7 +742,7 @@ a.article-title:hover {
 }
 .article-entry .video-container {
   position: relative;
-  padding-top: 52.734375%;
+  padding-top: 56.25%;
   height: 0;
   overflow: hidden;
 }
@@ -768,10 +767,10 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-more-link a:hover {
-  background: #0083f4;
+  background: #e32d40;
   color: #fff;
   text-decoration: none;
-  text-shadow: 0 1px #0069c3;
+  text-shadow: 0 1px #c01a2b;
 }
 .article-footer {
   zoom: 1;
@@ -921,7 +920,7 @@ a.article-title:hover {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font: 14px "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font: 14px "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 0 15px;
   color: #000;
   outline: none;
@@ -1088,7 +1087,7 @@ a.article-title:hover {
   margin: 50px 0;
 }
 #comments a {
-  color: #0083f4;
+  color: #e32d40;
 }
 .archives-wrap {
   margin: 50px 0;
@@ -1149,7 +1148,7 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #0083f4;
+  color: #e32d40;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -1224,7 +1223,7 @@ a.article-title:hover {
   color: #999;
 }
 #footer a {
-  color: #0083f4;
+  color: #e32d40;
   text-decoration: none;
 }
 #footer a:hover {
@@ -1253,7 +1252,7 @@ a.article-title:hover {
 }
 .article-entry pre,
 .article-entry code {
-  font-family: "Fira code Regular", "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: Monaco, "Source Code Pro", Consolas, Menlo, Consolas, monospace;
 }
 .article-entry code {
   background: #f0f0f0;
@@ -1317,7 +1316,7 @@ a.article-title:hover {
 }
 .article-entry .gist .gist-file {
   border: none;
-  font-family: "Fira code Regular", "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: Monaco, "Source Code Pro", Consolas, Menlo, Consolas, monospace;
   margin: 0;
 }
 .article-entry .gist .gist-file .gist-data {
@@ -1340,14 +1339,14 @@ a.article-title:hover {
 .article-entry .gist .gist-file .gist-meta {
   background: #272822;
   color: #75715e;
-  font: 0.85em "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font: 0.85em "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
   margin-left: 20px;
 }
 .article-entry .gist .gist-file .gist-meta a {
-  color: #0083f4;
+  color: #e32d40;
   font-weight: normal;
 }
 .article-entry .gist .gist-file .gist-meta a:hover {
@@ -1475,7 +1474,7 @@ pre .javascript .function {
 }
 .widget a:hover {
   text-decoration: underline;
-  color: #0083f4;
+  color: #e32d40;
 }
 .widget ul ul,
 .widget ol ul,

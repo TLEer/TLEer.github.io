@@ -70,39 +70,140 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><% if (pagination == 2){ %>
-  <% page.posts.each(function(post){ %>
-    <%- partial('article', {post: post, index: true}) %>
-  <% }) %>
-<% } else { %>
-  <% var last; %>
-  <% page.posts.each(function(post, i){ %>
-    <% var year = post.date.year(); %>
-    <% if (last != year){ %>
-      <% if (last != null){ %>
-        </div></section>
-      <% } %>
-      <% last = year; %>
+      <section id="main">
+  
+  
+    
+    
+      
+      
       <section class="archives-wrap">
         <div class="archive-year-wrap">
-          <a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>
+          <a href="/archives/2021" class="archive-year">2021</a>
         </div>
         <div class="archives">
-    <% } %>
-    <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
-  <% }) %>
-  <% if (page.posts.length){ %>
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2021/02/03/hdu4324/" class="archive-article-date">
+  <time datetime="2021-02-03T07:17:08.000Z" itemprop="datePublished">2月 3</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/02/03/hdu4324/">HDU 4324 Triangle LOVE</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2021/02/03/P1038/" class="archive-article-date">
+  <time datetime="2021-02-03T00:27:59.000Z" itemprop="datePublished">2月 3</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/02/03/P1038/">P1038 [NOIP2003 提高组] 神经网络</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2021/02/03/LIS/" class="archive-article-date">
+  <time datetime="2021-02-02T23:58:35.000Z" itemprop="datePublished">2月 3</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/02/03/LIS/">LIS</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2021/02/03/P1892/" class="archive-article-date">
+  <time datetime="2021-02-02T23:29:26.000Z" itemprop="datePublished">2月 3</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/02/03/P1892/">P1892 [BOI2003]团伙</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2021/02/02/LCString/" class="archive-article-date">
+  <time datetime="2021-02-02T01:12:34.000Z" itemprop="datePublished">2月 2</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/02/02/LCString/">LCString</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2021/02/02/LCS/" class="archive-article-date">
+  <time datetime="2021-02-02T00:00:20.000Z" itemprop="datePublished">2月 2</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/02/02/LCS/">LCS</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+  
     </div></section>
-  <% } %>
-<% } %>
-<% if (page.total > 1){ %>
+  
+
+
   <nav id="page-nav">
-    <%- paginator({
-      prev_text: "&lsaquo; " + __('prev'),
-      next_text: __('next') + " &rsaquo;"
-    }) %>
+    <a class="extend prev" rel="prev" href="/archives/2021/02/">&lt; Prev</a><a class="page-number" href="/archives/2021/02/">1</a><span class="page-number current">2</span>
   </nav>
-<% } %>
+
 </section>
       
       <aside id="sidebar">
