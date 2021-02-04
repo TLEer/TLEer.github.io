@@ -6,7 +6,7 @@
   <link href="http://tleer.github.io/atom.xml" rel="self"/>
   
   <link href="http://tleer.github.io/"/>
-  <updated>2021-02-04T23:06:43.048Z</updated>
+  <updated>2021-02-04T23:10:04.348Z</updated>
   <id>http://tleer.github.io/</id>
   
   <author>
@@ -21,18 +21,17 @@
     <link href="http://tleer.github.io/2021/02/05/garsia/"/>
     <id>http://tleer.github.io/2021/02/05/garsia/</id>
     <published>2021-02-04T23:03:14.000Z</published>
-    <updated>2021-02-04T23:06:43.048Z</updated>
+    <updated>2021-02-04T23:10:04.348Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>找到满足 $q_{k-1} \lt q_{k+1}$ 的最小下标 $k$</li><li>找到满足 $q_{j-1} \gt q_{k-1} + q_k$ 的最大 $j \lt k$</li><li>从列表中清除 $q_{k-1}, q_k$     </li><li>在 $q_{j-1}$ 之后插入 $q_{k-1} + q_k$     </li><li>$q_{-1}$ 和 $q_{n+1}$可以用 $\infty$ 处理</li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li>找到满足 $q_{k-1} \lt q_{k+1}$ 的最小下标 $k$</li><li>找到满足 $q_{j-1} \gt q_{k-1} + q_k$ 的最大 $j \lt k$</li><li>从列表中清除 $q_{k-1}, q_k$     </li><li>在 $q_{j-1}$ 之后插入 $q_{k-1} + q_k$     </li><li>$q_{-1}$ 和 $q_{n+1}$可以用 $\infty$ 处理<a id="more"></a>|——————————————-|<br>|$q-1$|$q0$|$q1$|$q2$|$q3$|$q4$|$q5$|$k$|$j$|<br>|——————————————-|</li></ol>]]></content>
     
     
-      
-      
     <summary type="html">&lt;ol&gt;
 &lt;li&gt;找到满足 $q_{k-1} \lt q_{k+1}$ 的最小下标 $k$&lt;/li&gt;
 &lt;li&gt;找到满足 $q_{j-1} \gt q_{k-1} + q_k$ 的最大 $j \lt k$&lt;/li&gt;
-&lt;li&gt;从列表中清除 $q_{k-1}, q_k$     &lt;/l</summary>
-      
+&lt;li&gt;从列表中清除 $q_{k-1}, q_k$     &lt;/li&gt;
+&lt;li&gt;在 $q_{j-1}$ 之后插入 $q_{k-1} + q_k$     &lt;/li&gt;
+&lt;li&gt;$q_{-1}$ 和 $q_{n+1}$可以用 $\infty$ 处理</summary>
     
     
     
@@ -281,9 +280,9 @@
     
     
     
-    <category term="luogu" scheme="http://tleer.github.io/tags/luogu/"/>
-    
     <category term="拓扑排序" scheme="http://tleer.github.io/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/"/>
+    
+    <category term="luogu" scheme="http://tleer.github.io/tags/luogu/"/>
     
   </entry>
   
@@ -325,9 +324,9 @@
     
     
     
-    <category term="并查集" scheme="http://tleer.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-    
     <category term="luogu" scheme="http://tleer.github.io/tags/luogu/"/>
+    
+    <category term="并查集" scheme="http://tleer.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     
   </entry>
   
