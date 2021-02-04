@@ -6,7 +6,7 @@
   <link href="http://tleer.github.io/atom.xml" rel="self"/>
   
   <link href="http://tleer.github.io/"/>
-  <updated>2021-02-04T23:10:04.348Z</updated>
+  <updated>2021-02-04T23:18:42.616Z</updated>
   <id>http://tleer.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://tleer.github.io/2021/02/05/garsia/"/>
     <id>http://tleer.github.io/2021/02/05/garsia/</id>
     <published>2021-02-04T23:03:14.000Z</published>
-    <updated>2021-02-04T23:10:04.348Z</updated>
+    <updated>2021-02-04T23:18:42.616Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>找到满足 $q_{k-1} \lt q_{k+1}$ 的最小下标 $k$</li><li>找到满足 $q_{j-1} \gt q_{k-1} + q_k$ 的最大 $j \lt k$</li><li>从列表中清除 $q_{k-1}, q_k$     </li><li>在 $q_{j-1}$ 之后插入 $q_{k-1} + q_k$     </li><li>$q_{-1}$ 和 $q_{n+1}$可以用 $\infty$ 处理<a id="more"></a>|——————————————-|<br>|$q-1$|$q0$|$q1$|$q2$|$q3$|$q4$|$q5$|$k$|$j$|<br>|——————————————-|</li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li>找到满足 $q_{k-1} \lt q_{k+1}$ 的最小下标 $k$</li><li>找到满足 $q_{j-1} \gt q_{k-1} + q_k$ 的最大 $j \lt k$</li><li>从列表中清除 $q_{k-1}, q_k$     </li><li>在 $q_{j-1}$ 之后插入 $q_{k-1} + q_k$     </li><li>$q_{-1}$ 和 $q_{n+1}$可以用 $\infty$ 处理<a id="more"></a><table><thead><tr><th align="center">$q-1$</th><th align="center">$q0$</th><th align="center">$q1$</th><th align="center">$q2$</th><th align="center">$q3$</th><th align="center">$q4$</th><th align="center">$q5$</th><th align="center">$k$</th><th align="center">$j$</th></tr></thead><tbody><tr><td align="center">$\infty$</td><td align="center">186</td><td align="center">64</td><td align="center">35</td><td align="center">32</td><td align="center">103</td><td align="center">$\infty$</td><td align="center">3</td><td align="center">1</td></tr><tr><td align="center">$\infty$</td><td align="center">186</td><td align="center">67</td><td align="center">64</td><td align="center">103</td><td align="center">$\infty$</td><td align="center"></td><td align="center">2</td><td align="center">1</td></tr><tr><td align="center">$\infty$</td><td align="center">186</td><td align="center">131</td><td align="center">103</td><td align="center">$\infty$</td><td align="center"></td><td align="center"></td><td align="center">2</td><td align="center">-1</td></tr><tr><td align="center">$\infty$</td><td align="center">234</td><td align="center">186</td><td align="center">$\infty$</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">1</td><td align="center">-1</td></tr><tr><td align="center">$\infty$</td><td align="center">420</td><td align="center">$\infty$</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr></tbody></table></li></ol>]]></content>
     
     
     <summary type="html">&lt;ol&gt;
