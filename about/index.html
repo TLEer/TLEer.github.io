@@ -31,6 +31,20 @@
   
 <meta name="generator" content="Hexo 5.3.0"></head>
 <body>
+  <script>
+        if (localStorage.getItem('dark') === '1') {
+        document.body.classList.add('dark');
+        }
+        else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
+        document.body.classList.add('dark');
+        } 
+        else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+        }
+    </script>
+    <a onclick="switchNightMode()" id="sma">
+        <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i>
+    </a>
 <div id="container">
   <div id="wrap">
     <header id="header">
@@ -102,7 +116,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://tleer.github.io/about/index.html" data-id="ckkri944e0000gyjx6v9t2t6x" class="article-share-link" data-share="baidu" data-title="About">Share</a>
+        <a data-url="http://tleer.github.io/about/index.html" data-id="ckkrih2150000tajx0nc8a9s4" class="article-share-link" data-share="baidu" data-title="About">Share</a>
       
 
       
@@ -335,4 +349,5 @@ MathJax.Hub.Queue(function() {
 </div>
 </body>
 </html>
+
 
