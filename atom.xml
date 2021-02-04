@@ -6,7 +6,7 @@
   <link href="http://tleer.github.io/atom.xml" rel="self"/>
   
   <link href="http://tleer.github.io/"/>
-  <updated>2021-02-04T00:23:06.594Z</updated>
+  <updated>2021-02-04T06:34:50.562Z</updated>
   <id>http://tleer.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>花店橱窗</title>
+    <link href="http://tleer.github.io/2021/02/04/flowershop/"/>
+    <id>http://tleer.github.io/2021/02/04/flowershop/</id>
+    <published>2021-02-04T06:33:13.000Z</published>
+    <updated>2021-02-04T06:34:50.562Z</updated>
+    
+    <content type="html"><![CDATA[<p>dp[i][j]表示摆了i种花，且第i种花的位置在j的最大值,location[i][j]表示第i种花摆在j时上一种花摆在哪。</p><p>1.因为可能有负数，所以dp要初始化为负无穷，dp[0][0] = 0为边界</p><p>2.第i种花的位置必须要大于第i-1种花，所以j的范围要注意，要从i-1开始，到m-(n-i)结束</p><p>3.第三个循环的k表示上一种花的位置，这里k要升序循环，因为答案要求按照字典序</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;dp[i][j]表示摆了i种花，且第i种花的位置在j的最大值,location[i][j]表示第i种花摆在j时上一种花摆在哪。&lt;/p&gt;
+&lt;p&gt;1.因为可能有负数，所以dp要初始化为负无穷，dp[0][0] = 0为边界&lt;/p&gt;
+&lt;p&gt;2.第i种花的位置必须要大于第i-1种花</summary>
+      
+    
+    
+    
+    
+    <category term="坐标DP" scheme="http://tleer.github.io/tags/%E5%9D%90%E6%A0%87DP/"/>
+    
+  </entry>
   
   <entry>
     <title>P1006 [NOIP2008 提高组] 传纸条</title>
@@ -47,7 +71,7 @@
     <link href="http://tleer.github.io/2021/02/03/matrixfun/"/>
     <id>http://tleer.github.io/2021/02/03/matrixfun/</id>
     <published>2021-02-03T13:31:39.000Z</published>
-    <updated>2021-02-03T13:33:52.903Z</updated>
+    <updated>2021-02-04T06:35:43.682Z</updated>
     
     <content type="html"><![CDATA[<h2 id="双倍经验"><a href="#双倍经验" class="headerlink" title="双倍经验"></a><del>双倍经验</del></h2><p>dp[i][j]</p><p>i代表左边取了几个数</p><p>j代表右边取了几个数</p><p>按行取最大值即可</p><p>先把2^n算出来挺好</p><a id="more"></a><p>CODE:</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function">__int128 <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  __int128 x=<span class="number">0</span>,f=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span>(ch&lt;<span class="string">&#x27;0&#x27;</span>||ch&gt;<span class="string">&#x27;9&#x27;</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(ch==<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            f=<span class="number">-1</span>;</span><br><span class="line">        ch=getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(ch&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;ch&lt;=<span class="string">&#x27;9&#x27;</span>)&#123;</span><br><span class="line">        x=x*<span class="number">10</span>+ch-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        ch=getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(__int128 x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(x &lt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">putchar</span>(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">      x = -x;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">if</span>(x &gt; <span class="number">9</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      print(x / <span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">__int128 dp[<span class="number">1001</span>][<span class="number">1001</span>], two[<span class="number">1001</span>], m;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Two</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">for</span> (__int128 i = <span class="number">1</span>; i &lt;= m + <span class="number">2</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">two[i] = two[i - <span class="number">1</span>] * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">__int128 a[<span class="number">1001</span>], ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  __int128 a[<span class="number">1001</span>], n;</span><br><span class="line">  n = <span class="number">1</span>;</span><br><span class="line">  m = read();</span><br><span class="line">  two[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">  Two();</span><br><span class="line">  <span class="keyword">for</span>(__int128 it = <span class="number">1</span>;it &lt;= n;it++)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">memset</span>(dp, <span class="number">0</span>, <span class="keyword">sizeof</span>(dp));</span><br><span class="line">      <span class="keyword">for</span>(__int128 i = <span class="number">1</span>;i &lt;= m;i++)</span><br><span class="line">&#123;</span><br><span class="line">  a[i] = read();</span><br><span class="line">&#125;</span><br><span class="line">      <span class="keyword">for</span>(__int128 i = <span class="number">1</span>;i &lt;= m;i++)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">for</span>(__int128 j = m;j &gt;= i;j--)</span><br><span class="line">    &#123;</span><br><span class="line">      dp[i][j] = max(dp[i][j], dp[i - <span class="number">1</span>][j] + two[m - j + i - <span class="number">1</span>] * a[i - <span class="number">1</span>]);</span><br><span class="line">      dp[i][j] = max(dp[i][j], dp[i][j + <span class="number">1</span>] + two[m - j + i - <span class="number">1</span>] * a[j + <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">      __int128 maxx;</span><br><span class="line">      <span class="keyword">for</span>(__int128 i = <span class="number">1</span>;i &lt;= m;i++)</span><br><span class="line">&#123;</span><br><span class="line">  maxx = max(maxx, dp[i][i] + two[m] * a[i]);</span><br><span class="line">&#125;</span><br><span class="line">      ans += maxx;</span><br><span class="line">    &#125;</span><br><span class="line">  print(ans);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
     
@@ -60,6 +84,8 @@
     
     
     
+    
+    <category term="坐标DP" scheme="http://tleer.github.io/tags/%E5%9D%90%E6%A0%87DP/"/>
     
   </entry>
   

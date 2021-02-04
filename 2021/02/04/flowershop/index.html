@@ -4,20 +4,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>P1892 [BOI2003]团伙 | TLEer&#39;s Blog</title>
+  <title>花店橱窗 | TLEer&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在某城市里住着n个人，任何两个认识的人不是朋友就是敌人，而且满足： 1、我朋友的朋友是我的朋友； 2、我敌人的敌人是我的朋友； 　　所有是朋友的人组成一个团伙。告诉你关于这n个人的m条信息，即某两个人是朋友，或者某两个人是敌人，请你编写一个程序，计算出这个城市最多可能有多少个团伙？  有一种操作叫反集：如果a和b是敌人，合并n+b和a，n+a和b 如果c和a是敌人，合并n+c和a，n+a和c 那么">
+  <meta name="description" content="dp[i][j]表示摆了i种花，且第i种花的位置在j的最大值,location[i][j]表示第i种花摆在j时上一种花摆在哪。 1.因为可能有负数，所以dp要初始化为负无穷，dp[0][0] &#x3D; 0为边界 2.第i种花的位置必须要大于第i-1种花，所以j的范围要注意，要从i-1开始，到m-(n-i)结束 3.第三个循环的k表示上一种花的位置，这里k要升序循环，因为答案要求按照字典序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P1892 [BOI2003]团伙">
-<meta property="og:url" content="http://tleer.github.io/2021/02/03/P1892/index.html">
+<meta property="og:title" content="花店橱窗">
+<meta property="og:url" content="http://tleer.github.io/2021/02/04/flowershop/index.html">
 <meta property="og:site_name" content="TLEer&#39;s Blog">
-<meta property="og:description" content="在某城市里住着n个人，任何两个认识的人不是朋友就是敌人，而且满足： 1、我朋友的朋友是我的朋友； 2、我敌人的敌人是我的朋友； 　　所有是朋友的人组成一个团伙。告诉你关于这n个人的m条信息，即某两个人是朋友，或者某两个人是敌人，请你编写一个程序，计算出这个城市最多可能有多少个团伙？  有一种操作叫反集：如果a和b是敌人，合并n+b和a，n+a和b 如果c和a是敌人，合并n+c和a，n+a和c 那么">
+<meta property="og:description" content="dp[i][j]表示摆了i种花，且第i种花的位置在j的最大值,location[i][j]表示第i种花摆在j时上一种花摆在哪。 1.因为可能有负数，所以dp要初始化为负无穷，dp[0][0] &#x3D; 0为边界 2.第i种花的位置必须要大于第i-1种花，所以j的范围要注意，要从i-1开始，到m-(n-i)结束 3.第三个循环的k表示上一种花的位置，这里k要升序循环，因为答案要求按照字典序">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-02-02T23:29:26.000Z">
-<meta property="article:modified_time" content="2021-02-03T10:04:49.715Z">
+<meta property="article:published_time" content="2021-02-04T06:33:13.000Z">
+<meta property="article:modified_time" content="2021-02-04T06:34:50.562Z">
 <meta property="article:author" content="TLEer">
-<meta property="article:tag" content="luogu">
-<meta property="article:tag" content="并查集">
+<meta property="article:tag" content="坐标DP">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="TLEer&#39;s Blog" type="application/atom+xml">
@@ -74,10 +73,10 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-P1892" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-flowershop" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/02/03/P1892/" class="article-date">
-  <time datetime="2021-02-02T23:29:26.000Z" itemprop="datePublished">2021-02-03</time>
+    <a href="/2021/02/04/flowershop/" class="article-date">
+  <time datetime="2021-02-04T06:33:13.000Z" itemprop="datePublished">2021-02-04</time>
 </a>
     
   </div>
@@ -88,7 +87,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      P1892 [BOI2003]团伙
+      花店橱窗
     </h1>
   
 
@@ -96,28 +95,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在某城市里住着n个人，任何两个认识的人不是朋友就是敌人，而且满足： 1、我朋友的朋友是我的朋友； 2、我敌人的敌人是我的朋友； 　　所有是朋友的人组成一个团伙。告诉你关于这n个人的m条信息，即某两个人是朋友，或者某两个人是敌人，请你编写一个程序，计算出这个城市最多可能有多少个团伙？</p>
-<hr>
-<h3 id="有一种操作叫反集："><a href="#有一种操作叫反集：" class="headerlink" title="有一种操作叫反集："></a>有一种操作叫反集：</h3><p>如果a和b是敌人，合并n+b和a，n+a和b</p>
-<p>如果c和a是敌人，合并n+c和a，n+a和c</p>
-<p>那么b和c就并在一起了</p>
-<a id="more"></a>
-
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, m, zz[<span class="number">1001</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(zz[k] != k)</span><br><span class="line">    zz[k] = find(zz[k]);</span><br><span class="line">  <span class="keyword">return</span> zz[k];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n * <span class="number">2</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">      zz[i] = i;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">int</span> p, x, y;</span><br><span class="line">      <span class="built_in">cin</span> &gt;&gt; p &gt;&gt; x &gt;&gt; y;</span><br><span class="line">      <span class="keyword">if</span>(p == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">	    zz[find(x)] = find(y);</span><br><span class="line">	&#125;</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">	  zz[find(x + n)] = find(y);</span><br><span class="line">	  zz[find(y + n)] = find(x); <span class="comment">// Don&#x27;t forget this</span></span><br><span class="line">	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">if</span>(zz[i] == i)</span><br><span class="line">	ans++;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p>dp[i][j]表示摆了i种花，且第i种花的位置在j的最大值,location[i][j]表示第i种花摆在j时上一种花摆在哪。</p>
+<p>1.因为可能有负数，所以dp要初始化为负无穷，dp[0][0] = 0为边界</p>
+<p>2.第i种花的位置必须要大于第i-1种花，所以j的范围要注意，要从i-1开始，到m-(n-i)结束</p>
+<p>3.第三个循环的k表示上一种花的位置，这里k要升序循环，因为答案要求按照字典序</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://tleer.github.io/2021/02/03/P1892/" data-id="ckkqhkj3n00071ajx9vgb8f8y" class="article-share-link" data-share="baidu" data-title="P1892 [BOI2003]团伙">Share</a>
+        <a data-url="http://tleer.github.io/2021/02/04/flowershop/" data-id="ckkqhkj3q000b1ajxe9aa4iay" class="article-share-link" data-share="baidu" data-title="花店橱窗">Share</a>
       
 
       
-        <a href="http://tleer.github.io/2021/02/03/P1892/#ds-thread" class="article-comment-link">Comments</a>
+        <a href="http://tleer.github.io/2021/02/04/flowershop/#ds-thread" class="article-comment-link">Comments</a>
       
 
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/luogu/" rel="tag">luogu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9D%90%E6%A0%87DP/" rel="tag">坐标DP</a></li></ul>
 
     </footer>
   </div>
@@ -125,19 +120,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/02/03/LIS/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          LIS
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/02/02/LCString/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/02/04/p1006/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">LCString</div>
+      <div class="article-nav-title">P1006 [NOIP2008 提高组] 传纸条</div>
     </a>
   
 </nav>
@@ -147,7 +133,7 @@
 
 
   <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2021/02/03/P1892/" data-title="P1892 [BOI2003]团伙" data-url="http://tleer.github.io/2021/02/03/P1892/"></div>
+    <div id="ds-thread" class="ds-thread" data-thread-key="2021/02/04/flowershop/" data-title="花店橱窗" data-url="http://tleer.github.io/2021/02/04/flowershop/"></div>
   </section>
 </section>
       
