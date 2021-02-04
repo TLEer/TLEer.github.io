@@ -6,15 +6,15 @@
   
   <title>nt错误大赏 | TLEer&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转自studyingfather的lg博客 记得开-Wall1.赋值运算符与等于号不分123&#x2F;&#x2F;使用-Wall编译选项会出现警告if(n&#x3D;1)puts(&quot;Yes&quot;);&#x2F;&#x2F;此处应为n&#x3D;&#x3D;1else puts(&quot;No&quot;);">
+  <meta name="description" content="转自studyingfather的lg博客 0.Run Build 和 Build&amp;run 不一样！不能直接点run（一上午的教训记得开-Wall1.赋值运算符与等于号不分123&#x2F;&#x2F;使用-Wall编译选项会出现警告if(n&#x3D;1)puts(&quot;Yes&quot;);&#x2F;&#x2F;此处应为n&#x3D;&#x3D;1else puts(&quot;No&quot;);">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nt错误大赏">
 <meta property="og:url" content="http://tleer.github.io/2021/02/03/commonerrors/index.html">
 <meta property="og:site_name" content="TLEer&#39;s Blog">
-<meta property="og:description" content="转自studyingfather的lg博客 记得开-Wall1.赋值运算符与等于号不分123&#x2F;&#x2F;使用-Wall编译选项会出现警告if(n&#x3D;1)puts(&quot;Yes&quot;);&#x2F;&#x2F;此处应为n&#x3D;&#x3D;1else puts(&quot;No&quot;);">
+<meta property="og:description" content="转自studyingfather的lg博客 0.Run Build 和 Build&amp;run 不一样！不能直接点run（一上午的教训记得开-Wall1.赋值运算符与等于号不分123&#x2F;&#x2F;使用-Wall编译选项会出现警告if(n&#x3D;1)puts(&quot;Yes&quot;);&#x2F;&#x2F;此处应为n&#x3D;&#x3D;1else puts(&quot;No&quot;);">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-02-03T08:54:17.000Z">
-<meta property="article:modified_time" content="2021-02-03T10:04:05.235Z">
+<meta property="article:modified_time" content="2021-02-04T03:20:06.294Z">
 <meta property="article:author" content="TLEer">
 <meta property="article:tag" content="经常犯的错">
 <meta name="twitter:card" content="summary">
@@ -96,7 +96,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>转自studyingfather的lg博客</p>
-<h2 id="记得开-Wall"><a href="#记得开-Wall" class="headerlink" title="记得开-Wall"></a>记得开-Wall</h2><h2 id="1-赋值运算符与等于号不分"><a href="#1-赋值运算符与等于号不分" class="headerlink" title="1.赋值运算符与等于号不分"></a>1.赋值运算符与等于号不分</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用-Wall编译选项会出现警告</span></span><br><span class="line"><span class="keyword">if</span>(n=<span class="number">1</span>)<span class="built_in">puts</span>(<span class="string">&quot;Yes&quot;</span>);<span class="comment">//此处应为n==1</span></span><br><span class="line"><span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">&quot;No&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="0-Run-Build-和-Build-amp-run-不一样！不能直接点run（一上午的教训"><a href="#0-Run-Build-和-Build-amp-run-不一样！不能直接点run（一上午的教训" class="headerlink" title="0.Run Build 和 Build&amp;run 不一样！不能直接点run（一上午的教训"></a>0.Run Build 和 Build&amp;run 不一样！不能直接点run（一上午的教训</h1><h2 id="记得开-Wall"><a href="#记得开-Wall" class="headerlink" title="记得开-Wall"></a>记得开-Wall</h2><h2 id="1-赋值运算符与等于号不分"><a href="#1-赋值运算符与等于号不分" class="headerlink" title="1.赋值运算符与等于号不分"></a>1.赋值运算符与等于号不分</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用-Wall编译选项会出现警告</span></span><br><span class="line"><span class="keyword">if</span>(n=<span class="number">1</span>)<span class="built_in">puts</span>(<span class="string">&quot;Yes&quot;</span>);<span class="comment">//此处应为n==1</span></span><br><span class="line"><span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">&quot;No&quot;</span>);</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 
 <h2 id="2-循环变量错误"><a href="#2-循环变量错误" class="headerlink" title="2.循环变量错误"></a>2.循环变量错误</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;i++)<span class="comment">//显然应该是j++</span></span><br><span class="line">  <span class="comment">//do something</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> j=n;j&gt;=<span class="number">1</span>;j++)<span class="comment">//显然应该是j--</span></span><br><span class="line">  <span class="comment">//do something</span></span><br></pre></td></tr></table></figure>
@@ -110,7 +110,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://tleer.github.io/2021/02/03/commonerrors/" data-id="ckkq492to000axdjx05r0a0cr" class="article-share-link" data-share="baidu" data-title="nt错误大赏">Share</a>
+        <a data-url="http://tleer.github.io/2021/02/03/commonerrors/" data-id="ckkqakwxn000abfjx7vjx1xwd" class="article-share-link" data-share="baidu" data-title="nt错误大赏">Share</a>
       
 
       
