@@ -117,11 +117,6 @@ button::-moz-focus-inner {
   font-weight: normal;
   src: url("fonts/fontawesome-webfont.eot?v=#4.0.3");
   src: url("fonts/fontawesome-webfont.eot?#iefix&v=#4.0.3") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff?v=#4.0.3") format("woff"), url("fonts/fontawesome-webfont.ttf?v=#4.0.3") format("truetype"), url("fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.0.3") format("svg");
-  font-family: Fira Code Regular;
-  font-style: normal;
-  font-weight: normal;
-  src: url("fonts/FiraCode-Regular.eot?v=#5.002");
-  src: url("fonts/FiraCode-Regular.woff?v=#5.002") format("woff"), url("fonts/FiraCode-Regular.ttf?v=#5.002") format("truetype"),;
 }
 html,
 body,
