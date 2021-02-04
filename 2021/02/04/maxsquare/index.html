@@ -4,17 +4,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>晴天小猪历险记之Hill | TLEer&#39;s Blog</title>
+  <title>求最大正方形面积 | TLEer&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="看题解，自己打一遍">
+  <meta name="description" content="1234567891011121314151617181920212223242526272829#include &lt;iostream&gt;using namespace std;int a[1001][1001], dp[1001][1001];int main()&amp;#123;    int n, m;    cin &gt;&gt; n &gt;&gt; m;    for (int">
 <meta property="og:type" content="article">
-<meta property="og:title" content="晴天小猪历险记之Hill">
-<meta property="og:url" content="http://tleer.github.io/2021/02/04/pig-pick-medicine/index.html">
+<meta property="og:title" content="求最大正方形面积">
+<meta property="og:url" content="http://tleer.github.io/2021/02/04/maxsquare/index.html">
 <meta property="og:site_name" content="TLEer&#39;s Blog">
-<meta property="og:description" content="看题解，自己打一遍">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829#include &lt;iostream&gt;using namespace std;int a[1001][1001], dp[1001][1001];int main()&amp;#123;    int n, m;    cin &gt;&gt; n &gt;&gt; m;    for (int">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-02-04T09:12:17.000Z">
-<meta property="article:modified_time" content="2021-02-04T11:27:26.361Z">
+<meta property="article:published_time" content="2021-02-04T12:02:49.000Z">
+<meta property="article:modified_time" content="2021-02-04T12:03:34.949Z">
 <meta property="article:author" content="TLEer">
 <meta property="article:tag" content="坐标DP">
 <meta name="twitter:card" content="summary">
@@ -73,10 +73,10 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-pig-pick-medicine" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-maxsquare" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/02/04/pig-pick-medicine/" class="article-date">
-  <time datetime="2021-02-04T09:12:17.000Z" itemprop="datePublished">2021-02-04</time>
+    <a href="/2021/02/04/maxsquare/" class="article-date">
+  <time datetime="2021-02-04T12:02:49.000Z" itemprop="datePublished">2021-02-04</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      晴天小猪历险记之Hill
+      求最大正方形面积
     </h1>
   
 
@@ -95,18 +95,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>看题解，自己打一遍</p>
-<a id="more"></a>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">1001</span>][<span class="number">1001</span>], a[<span class="number">1001</span>][<span class="number">1001</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m, n;</span><br><span class="line">	<span class="built_in">memset</span>(dp, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(dp));</span><br><span class="line">	<span class="built_in">memset</span>(a, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(a));</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; a[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	dp[n][<span class="number">1</span>] = a[n][<span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt;= <span class="number">1</span>; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[i][<span class="number">1</span>] = min(dp[i][<span class="number">1</span>], dp[i][i] + a[i][<span class="number">1</span>]);		  <span class="comment">//末到当前行首</span></span><br><span class="line">		dp[i][<span class="number">1</span>] = min(dp[i][<span class="number">1</span>], dp[i + <span class="number">1</span>][i + <span class="number">1</span>] + a[i][<span class="number">1</span>]); <span class="comment">//还能这么跑？！下一层最后一个（逆序dp</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			dp[i][j] = min(dp[i][j], dp[i][j - <span class="number">1</span>] + a[i][j]);						 <span class="comment">//左边的</span></span><br><span class="line">			dp[i][j] = min(dp[i][j], min(dp[i + <span class="number">1</span>][j], dp[i + <span class="number">1</span>][j + <span class="number">1</span>]) + a[i][j]); <span class="comment">//下边+右下</span></span><br><span class="line">		&#125;</span><br><span class="line">		dp[i][i] = min(dp[i][i], dp[i][<span class="number">1</span>] + a[i][i]);	  <span class="comment">//最后到第一个</span></span><br><span class="line">		dp[i][i] = min(dp[i][i], dp[i + <span class="number">1</span>][<span class="number">1</span>] + a[i][i]); <span class="comment">//最后到下一行第一个</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>; j &gt;= <span class="number">1</span>; --j)</span><br><span class="line">			dp[i][j] = min(dp[i][j], dp[i][j + <span class="number">1</span>] + a[i][j]); <span class="comment">//从右往左跑右边的</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//第二次dp</span></span><br><span class="line">		dp[i][<span class="number">1</span>] = min(dp[i][<span class="number">1</span>], dp[i][i] + a[i][<span class="number">1</span>]); <span class="comment">//到行首</span></span><br><span class="line">		dp[i][<span class="number">1</span>] = min(dp[i][<span class="number">1</span>], dp[i + <span class="number">1</span>][i + <span class="number">1</span>] + a[i][<span class="number">1</span>]);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			dp[i][j] = min(dp[i][j], dp[i][j - <span class="number">1</span>] + a[i][j]);</span><br><span class="line">			dp[i][j] = min(dp[i][j], min(dp[i + <span class="number">1</span>][j], dp[i + <span class="number">1</span>][j + <span class="number">1</span>]) + a[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">		dp[i][i] = min(dp[i][i], dp[i][<span class="number">1</span>] + a[i][i]);</span><br><span class="line">		dp[i][i] = min(dp[i][i], dp[i + <span class="number">1</span>][<span class="number">1</span>] + a[i][i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; dp[<span class="number">1</span>][<span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*看了题解 */</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1001</span>][<span class="number">1001</span>], dp[<span class="number">1001</span>][<span class="number">1001</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[i][j] == <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                dp[i][j] = <span class="number">1</span> + min(dp[i - <span class="number">1</span>][j - <span class="number">1</span>], min(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]));<span class="comment">//left up leftup</span></span><br><span class="line">            &#125;</span><br><span class="line">            ans = max(ans, dp[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://tleer.github.io/2021/02/04/pig-pick-medicine/" data-id="ckkqt9xya000mohjxgke454fg" class="article-share-link" data-share="baidu" data-title="晴天小猪历险记之Hill">Share</a>
+        <a data-url="http://tleer.github.io/2021/02/04/maxsquare/" data-id="ckkqt9xy7000johjxfkxpaaoj" class="article-share-link" data-share="baidu" data-title="求最大正方形面积">Share</a>
       
 
       
-        <a href="http://tleer.github.io/2021/02/04/pig-pick-medicine/#ds-thread" class="article-comment-link">Comments</a>
+        <a href="http://tleer.github.io/2021/02/04/maxsquare/#ds-thread" class="article-comment-link">Comments</a>
       
 
       
@@ -118,19 +116,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/02/04/maxsquare/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          求最大正方形面积
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/02/04/vscode/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/02/04/pig-pick-medicine/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">vscode</div>
+      <div class="article-nav-title">晴天小猪历险记之Hill</div>
     </a>
   
 </nav>
@@ -140,7 +129,7 @@
 
 
   <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2021/02/04/pig-pick-medicine/" data-title="晴天小猪历险记之Hill" data-url="http://tleer.github.io/2021/02/04/pig-pick-medicine/"></div>
+    <div id="ds-thread" class="ds-thread" data-thread-key="2021/02/04/maxsquare/" data-title="求最大正方形面积" data-url="http://tleer.github.io/2021/02/04/maxsquare/"></div>
   </section>
 </section>
       
