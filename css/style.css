@@ -682,7 +682,7 @@ a.article-title:hover {
   line-height: 1.6em;
   margin: 1.6em 0;
 }
-.article-entry h1,
+.article-entry body.dark h1,
 .article-entry h2,
 .article-entry h3,
 .article-entry h4,
@@ -690,7 +690,7 @@ a.article-title:hover {
 .article-entry h6 {
   font-weight: bold;
 }
-.article-entry h1,
+.article-entry body.dark h1,
 .article-entry h2,
 .article-entry h3,
 .article-entry h4,
@@ -699,11 +699,11 @@ a.article-title:hover {
   line-height: 1.1em;
   margin: 1.1em 0;
 }
-.article-entry a {
-  color: #e32d40;
+.article-entry body.dark a {
+  color: rgba(255,255,255,0.6);
   text-decoration: none;
 }
-.article-entry a:hover {
+.article-entry body.dark a:hover {
   text-decoration: underline;
 }
 .article-entry ul,
