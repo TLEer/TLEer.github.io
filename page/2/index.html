@@ -72,6 +72,50 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-LCString" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/02/02/LCString/" class="article-date">
+  <time datetime="2021-02-02T01:12:34.000Z" itemprop="datePublished">2021-02-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/02/LCString/">LCString</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> a, b;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">1001</span>][<span class="number">1001</span>], ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">  <span class="keyword">int</span> lena = a.length(), lenb = b.length();</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; lena;i++)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; lenb;j++)</span><br><span class="line">	&#123;</span><br><span class="line">	  <span class="keyword">if</span>(a[i] == b[j])</span><br><span class="line">	    &#123;</span><br><span class="line">	      <span class="keyword">if</span>(i == <span class="number">0</span> ||j == <span class="number">0</span>)</span><br><span class="line">		dp[i][j] = <span class="number">1</span>;</span><br><span class="line">	      <span class="keyword">else</span></span><br><span class="line">		dp[i][j] = max(dp[i][j],dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span>);</span><br><span class="line">	      ans = max(ans, dp[i][j]);</span><br><span class="line">	    &#125;</span><br><span class="line">	  <span class="keyword">else</span></span><br><span class="line">	    dp[i][j] = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*Substring*/</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://tleer.github.io/2021/02/02/LCString/" data-id="ckkqlgzuq0003pgjxcocfgrdh" class="article-share-link" data-share="baidu" data-title="LCString">Share</a>
+      
+
+      
+        <a href="http://tleer.github.io/2021/02/02/LCString/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1/" rel="tag">最长公共</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-LCS" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/02/02/LCS/" class="article-date">
@@ -107,7 +151,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://tleer.github.io/2021/02/02/LCS/" data-id="ckkqlbtuf0001h7jxfmz2fhid" class="article-share-link" data-share="baidu" data-title="LCS">Share</a>
+        <a data-url="http://tleer.github.io/2021/02/02/LCS/" data-id="ckkqlgzum0001pgjxhh9fhzy1" class="article-share-link" data-share="baidu" data-title="LCS">Share</a>
       
 
       
@@ -139,7 +183,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/luogu/" rel="tag">luogu</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9D%90%E6%A0%87DP/" rel="tag">坐标DP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" rel="tag">奇技淫巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" rel="tag">拓扑排序</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/" rel="tag">最长上升子序列</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1/" rel="tag">最长公共</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%84%E5%AD%A6/" rel="tag">玄学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%8F%E5%B8%B8%E7%8A%AF%E7%9A%84%E9%94%99/" rel="tag">经常犯的错</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/luogu/" rel="tag">luogu</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9D%90%E6%A0%87DP/" rel="tag">坐标DP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" rel="tag">奇技淫巧</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" rel="tag">拓扑排序</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/" rel="tag">最长上升子序列</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1/" rel="tag">最长公共</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%84%E5%AD%A6/" rel="tag">玄学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%8F%E5%B8%B8%E7%8A%AF%E7%9A%84%E9%94%99/" rel="tag">经常犯的错</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -148,7 +192,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/luogu/" style="font-size: 20px;">luogu</a> <a href="/tags/%E5%9D%90%E6%A0%87DP/" style="font-size: 20px;">坐标DP</a> <a href="/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" style="font-size: 10px;">奇技淫巧</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 15px;">拓扑排序</a> <a href="/tags/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 10px;">最长上升子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1/" style="font-size: 15px;">最长公共</a> <a href="/tags/%E7%8E%84%E5%AD%A6/" style="font-size: 10px;">玄学</a> <a href="/tags/%E7%BB%8F%E5%B8%B8%E7%8A%AF%E7%9A%84%E9%94%99/" style="font-size: 10px;">经常犯的错</a>
+      <a href="/tags/luogu/" style="font-size: 20px;">luogu</a> <a href="/tags/%E5%9D%90%E6%A0%87DP/" style="font-size: 20px;">坐标DP</a> <a href="/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" style="font-size: 15px;">奇技淫巧</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 15px;">拓扑排序</a> <a href="/tags/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/" style="font-size: 10px;">最长上升子序列</a> <a href="/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1/" style="font-size: 15px;">最长公共</a> <a href="/tags/%E7%8E%84%E5%AD%A6/" style="font-size: 10px;">玄学</a> <a href="/tags/%E7%BB%8F%E5%B8%B8%E7%8A%AF%E7%9A%84%E9%94%99/" style="font-size: 10px;">经常犯的错</a>
     </div>
   </div>
 
@@ -157,7 +201,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">12</span></li></ul>
     </div>
   </div>
 
@@ -167,6 +211,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/02/04/vscode/">vscode</a>
+          </li>
         
           <li>
             <a href="/2021/02/04/flowershop/">花店橱窗</a>
@@ -182,10 +230,6 @@
         
           <li>
             <a href="/2021/02/03/int128/">int128 奇技淫巧</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/03/commonerrors/">nt错误大赏</a>
           </li>
         
       </ul>
