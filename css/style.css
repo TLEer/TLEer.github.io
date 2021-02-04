@@ -117,6 +117,11 @@ button::-moz-focus-inner {
   font-weight: normal;
   src: url("fonts/fontawesome-webfont.eot?v=#4.0.3");
   src: url("fonts/fontawesome-webfont.eot?#iefix&v=#4.0.3") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff?v=#4.0.3") format("woff"), url("fonts/fontawesome-webfont.ttf?v=#4.0.3") format("truetype"), url("fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.0.3") format("svg");
+  font-family: Fira Code Regular;
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/FiraCode-Regular.eot?v=#5.002");
+  src: url("fonts/FiraCode-Regular.woff?v=#5.002") format("woff"), url("fonts/FiraCode-Regular.ttf?v=#5.002") format("truetype"),;
 }
 html,
 body,
@@ -705,7 +710,7 @@ a.article-title:hover {
   padding: 10px 0;
 }
 .article-entry blockquote {
-  font-family: "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font-family: "Fira code Regular", "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
   margin: 1.6em 0;
   padding: 0 0.8em;
   border-left: 4px solid #ddd;
@@ -1253,7 +1258,7 @@ a.article-title:hover {
 }
 .article-entry pre,
 .article-entry code {
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: "Fira code Regular", "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
 }
 .article-entry code {
   background: #f0f0f0;
@@ -1317,7 +1322,7 @@ a.article-title:hover {
 }
 .article-entry .gist .gist-file {
   border: none;
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: "Fira code Regular", "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
   margin: 0;
 }
 .article-entry .gist .gist-file .gist-data {
