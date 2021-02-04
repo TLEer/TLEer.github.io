@@ -4,19 +4,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>vscode | TLEer&#39;s Blog</title>
+  <title>Tag: 杂谈 | TLEer&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在task里添加编译命令，从而执行编译操作。步骤如下：   按住ctrl+shift+P，打开命令面板；  选择Configure Tasks…，选择Create tasks.json file from templates，之后会看到一系列task模板；  选择others，创建一个task，下面是一个task的示例：">
-<meta property="og:type" content="article">
-<meta property="og:title" content="vscode">
-<meta property="og:url" content="http://tleer.github.io/2021/02/04/vscode/index.html">
+  <meta name="description" content="OI, Someting Strange">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TLEer&#39;s Blog">
+<meta property="og:url" content="http://tleer.github.io/tags/%E6%9D%82%E8%B0%88/index.html">
 <meta property="og:site_name" content="TLEer&#39;s Blog">
-<meta property="og:description" content="在task里添加编译命令，从而执行编译操作。步骤如下：   按住ctrl+shift+P，打开命令面板；  选择Configure Tasks…，选择Create tasks.json file from templates，之后会看到一系列task模板；  选择others，创建一个task，下面是一个task的示例：">
+<meta property="og:description" content="OI, Someting Strange">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-02-04T08:23:25.000Z">
-<meta property="article:modified_time" content="2021-02-04T08:25:07.550Z">
 <meta property="article:author" content="TLEer">
-<meta property="article:tag" content="奇技淫巧">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="TLEer&#39;s Blog" type="application/atom+xml">
@@ -73,88 +70,41 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-vscode" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/02/04/vscode/" class="article-date">
-  <time datetime="2021-02-04T08:23:25.000Z" itemprop="datePublished">2021-02-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      vscode
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2021/02/04/aiguo/" class="archive-article-date">
+  <time datetime="2021-02-04T13:34:35.000Z" itemprop="datePublished">2月 4</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/02/04/aiguo/">论碍国者</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在task里添加编译命令，从而执行编译操作。步骤如下：</p>
-<ul>
-<li> 按住ctrl+shift+P，打开命令面板；</li>
-<li> 选择Configure Tasks…，选择Create tasks.json file from templates，之后会看到一系列task模板；</li>
-<li> 选择others，创建一个task，下面是一个task的示例：</li>
-</ul>
-<a id="more"></a>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; See https:&#x2F;&#x2F;go.microsoft.com&#x2F;fwlink&#x2F;?LinkId&#x3D;733558</span><br><span class="line">    &#x2F;&#x2F; for the documentation about the tasks.json format</span><br><span class="line">    &quot;version&quot;: &quot;2.0.0&quot;,</span><br><span class="line">    &quot;tasks&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;build hello world&quot;,     &#x2F;&#x2F; task的名字</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,   </span><br><span class="line">            &quot;command&quot;: &quot;g++&quot;,    &#x2F;&#x2F;编译命令</span><br><span class="line">            &quot;args&quot;: [    &#x2F;&#x2F;编译参数列表</span><br><span class="line">                &quot;-g&quot;, &#x2F;&#x2F; 加上-g可以断点调试</span><br><span class="line">                &quot;main.cpp&quot;,</span><br><span class="line">                &quot;-o&quot;,</span><br><span class="line">                &quot;main.out&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置launch-json"><a href="#配置launch-json" class="headerlink" title="配置launch.json"></a>配置launch.json</h2><p>把debug的内容配置在launch.json，这样我们就可以使用断点调试了。</p>
-<ul>
-<li> 点击侧边栏的debug按钮，就是那只虫子图标；</li>
-<li> 在上面的debug栏目里，点击齿轮图标；</li>
-<li> 在下拉菜单中选择 C++ (GDB/LLDB)，这时会在.vscode文件夹下创建一个launch.json文件，用来配置debug；下面是launch.json文件的一个示例：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; Use IntelliSense to learn about possible attributes.</span><br><span class="line">    &#x2F;&#x2F; Hover to view descriptions of existing attributes.</span><br><span class="line">    &#x2F;&#x2F; For more information, visit: https:&#x2F;&#x2F;go.microsoft.com&#x2F;fwlink&#x2F;?linkid&#x3D;830387</span><br><span class="line">    &quot;version&quot;: &quot;0.2.0&quot;,</span><br><span class="line">    &quot;configurations&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;debug hello world&quot;,    &#x2F;&#x2F;名称</span><br><span class="line">            &quot;type&quot;: &quot;cppdbg&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">            &quot;program&quot;: &quot;$&#123;workspaceFolder&#125;&#x2F;main.out&quot;,    &#x2F;&#x2F;当前目录下编译后的可执行文件</span><br><span class="line">            &quot;args&quot;: [],</span><br><span class="line">            &quot;stopAtEntry&quot;: false,</span><br><span class="line">            &quot;cwd&quot;: &quot;$&#123;workspaceFolder&#125;&quot;,    &#x2F;&#x2F;表示当前目录</span><br><span class="line">            &quot;environment&quot;: [],</span><br><span class="line">            &quot;externalConsole&quot;: false, &#x2F;&#x2F; 在vscode自带的终端中运行，不打开外部终端</span><br><span class="line">            &quot;MIMode&quot;: &quot;gdb&quot;,    &#x2F;&#x2F;用gdb来debug</span><br><span class="line">            &quot;setupCommands&quot;: [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;description&quot;: &quot;Enable pretty-printing for gdb&quot;,</span><br><span class="line">                    &quot;text&quot;: &quot;-enable-pretty-printing&quot;,</span><br><span class="line">                    &quot;ignoreFailures&quot;: true</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;preLaunchTask&quot;: &quot;build hello world&quot;  &#x2F;&#x2F;在执行debug hello world前，先执行build hello world这个task，看第4节</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://tleer.github.io/2021/02/04/vscode/" data-id="ckkqwjllz000qpmjx1zzx9jyv" class="article-share-link" data-share="baidu" data-title="vscode">Share</a>
-      
-
-      
-        <a href="http://tleer.github.io/2021/02/04/vscode/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" rel="tag">奇技淫巧</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2021/02/04/pig-pick-medicine/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          晴天小猪历险记之Hill
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/02/04/flowershop/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">花店橱窗</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
 
-  <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2021/02/04/vscode/" data-title="vscode" data-url="http://tleer.github.io/2021/02/04/vscode/"></div>
-  </section>
 </section>
       
       <aside id="sidebar">
