@@ -1,0 +1,60 @@
+---
+title: P1892 [BOI2003]团伙
+date: 2021-02-03 07:29:26
+tags: [并查集,luogu]
+---
+
+
+
+在某城市里住着n个人，任何两个认识的人不是朋友就是敌人，而且满足： 1、我朋友的朋友是我的朋友； 2、我敌人的敌人是我的朋友； 　　所有是朋友的人组成一个团伙。告诉你关于这n个人的m条信息，即某两个人是朋友，或者某两个人是敌人，请你编写一个程序，计算出这个城市最多可能有多少个团伙？
+***
+### 有一种操作叫反集：
+
+如果a和b是敌人，合并n+b和a，n+a和b
+
+如果c和a是敌人，合并n+c和a，n+a和c
+
+那么b和c就并在一起了
+```cpp
+#include<iostream>
+using namespace std;
+int n, m, zz[1001];
+int find(int k)
+{
+  if(zz[k] != k)
+    zz[k] = find(zz[k]);
+  return zz[k];
+}
+int main()
+{
+  cin >> n >> m;
+  for(int i = 1;i <= n * 2;i++)
+    {
+      zz[i] = i;
+    }
+  for(int i = 1;i <= m;i++)
+    {
+      int p, x, y;
+      cin >> p >> x >> y;
+      if(p == 0)
+	{
+	    zz[find(x)] = find(y);
+	}
+      else
+	{
+	  zz[find(x + n)] = find(y);
+	  zz[find(y + n)] = find(x); // Don't forget this
+	}
+    }
+  int ans = 0;
+  for(int i = 1;i <= n;i++)
+    {
+      if(zz[i] == i)
+	ans++;
+    }
+  cout << ans << endl;
+  return 0;
+}
+
+```
+

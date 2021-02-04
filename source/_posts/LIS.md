@@ -1,0 +1,66 @@
+---
+title: LIS
+date: 2021-02-03 07:58:35
+tags: 最长上升子序列
+---
+
+# Dilworth定理:最少链划分= 最长反链长度 
+
+n个导弹高度中最少能有多少个不上升子序列，而不上升子序列的反链是上升子序列，根据定理，所以最少多少套系统= 最长导弹高度上升序列长度。 
+
+<!--more-->
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+  int N=0;
+  int a;
+  vector<int>nums;
+  while(cin>>a)
+    {
+      N++;
+      nums.push_back(a);
+    }
+  int result[1001]={1};
+  int res[1001]={1};
+  int noup=1;
+  int maxLen=1;
+  for(int i=1;i<N;i++)
+    {
+      if(result[i]==0)
+	result[i] = 1;
+      //upd
+      for(int j=0;j<i;j++)
+        {
+	  if(nums[i]>nums[j]) {
+	    if((result[j]+1)>result[i])
+	      result[i] = result[j] + 1;
+	    if(result[j]+1>maxLen)
+	      maxLen = result[j+1];
+	  }
+        }
+    }
+  for(int i=1;i<N;i++)
+    {
+      if(res[i]==0)
+	res[i] = 1;
+      //upd
+      for(int j=0;j<i;j++)
+        {
+	  if(nums[i]<=nums[j]) {
+	    if((res[j]+1)>res[i])
+	      res[i] = res[j] + 1;
+	    if(res[j]+1>noup)
+	      noup = res[j+1];
+	  }
+        }
+    }
+  cout<<noup<<endl;
+  cout<<maxLen<<endl;
+  return 0;
+}
+
+```

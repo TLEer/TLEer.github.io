@@ -1,0 +1,133 @@
+---
+title: nt错误大赏
+date: 2021-02-03 16:54:17
+tags: 经常犯的错
+---
+转自studyingfather的lg博客
+## 记得开-Wall
+## 1.赋值运算符与等于号不分
+
+```cpp
+//使用-Wall编译选项会出现警告
+if(n=1)puts("Yes");//此处应为n==1
+else puts("No");
+```
+
+## 2.循环变量错误
+
+```cpp
+for(int i=1;i<=n;i++)
+ for(int j=1;j<=n;i++)//显然应该是j++
+  //do something
+
+for(int i=1;i<=n;i++)
+ for(int j=n;j>=1;j++)//显然应该是j--
+  //do something
+```
+
+## 4.多组数据下未初始化变量&&局部变量未赋初值
+
+```cpp
+//比较好的习惯是将变量定义在循环内，从而求解每组数据时都能初始化变量
+#include <stdio.h>
+int sum;
+int main()
+{
+ int T;
+ scanf("%d",&T);
+ while(T--)
+ {
+  //int sum=0;
+  //像上面这样定义变量就不会出事了
+  int n;
+  scanf("%d",&n);
+  for(int i=1;i<=n;i++)
+  {
+   int num;
+   scanf("%d",&num);
+   sum+=num;
+  }
+  printf("%d\n",sum);
+ }
+ return 0;
+}
+```
+Another Example：
+
+```cpp
+#include <cstdio>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+struct pencil
+{
+ int shuliang,jiage;
+}a[5];
+int main()
+{
+ //freopen("pencil.in","r",stdin);
+ //freopen("pencil.out","w",stdout);
+ int n,ans;//ans没有初始化，损失惨重
+ //打开-Wall会发出警告
+ scanf("%d",&n);
+ for(int i=1;i<=3;i++)
+ {
+  scanf("%d%d",&a[i].shuliang,&a[i].jiage);
+  ans=min(ans,(int)ceil(n*1.0/a[i].shuliang)*a[i].jiage);
+ }
+ printf("%d",ans);
+ //fclose(stdin);
+ //fclose(stdout);
+ return 0;
+}
+```
+
+## 5.Where is my output?
+
+```cpp
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+ freopen("a.out","w",stdout);
+ ios::sync_with_stdio(false);
+ cout<<1;//正确的写法是cout<<1<<endl;
+ //在关闭与stdio的同步后，一定在每行输出结束时加上endl来刷新缓冲区
+ //否则输出将无法立刻被写入输出文件
+ //无论何时，每行输出都以换行符结尾都是一个好习惯（即使只有一行输出的时候也是）
+ fclose(stdout);
+ //不使用fclose时，理论上会在程序结束时先输出缓冲区内容，随后关闭文件
+ //因此不使用fclose不会产生缓冲区内容无法输出的问题
+ //但还是建议在考场上加上fclose，这时一定要注意这个问题
+ return 0;//缓冲区的内容将在缓冲区满或程序结束时才会输出，但这时已经无法写入文件了
+}
+```
+
+## 6.关闭同步、混用输出（直接抬走
+
+```cpp
+//这个例子将说明，关闭与stdio的同步后，混用两种IO的后果
+//建议单步运行来观察效果
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+ ios::sync_with_stdio(false);
+ //关闭IO后，cin/cout将使用独立缓冲区，而不是将输出同步至scanf/printf的缓冲区，从而减少IO耗时
+ cout<<"a\n";
+ //cout下，使用'\n'换行时，内容会被缓冲而不会被立刻输出，应该使用endl来换行并立刻刷新缓冲区
+ printf("b\n");
+ //printf的'\n'会刷新printf的缓冲区，导致输出错位
+ cout<<"c\n";
+ return 0;//程序结束时，cout的缓冲区才会被输出
+}
+```
+
+## 7.运算符优先级问题
+
+```cpp
+int a=num<<2+1;//这里会被解读为num<<(2+1)
+a=(num<<2)+1;
+```

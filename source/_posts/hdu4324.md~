@@ -1,0 +1,164 @@
+---
+title: HDU 4324 Triangle LOVE
+date: 2021-02-03 15:17:08
+tags: [玄学,拓扑]
+---
+
+## 找不同（大雾
+
+T掉的代码：
+```cpp
+#include<iostream>
+#include<queue>
+#include<cstdio>
+#include<cstring>
+using namespace std;
+int head[2001], in[2001], tote;
+struct EDGE{
+  int to, next;
+}edge[2001];
+void addedge(int from, int to)
+{
+  edge[ ++tote].  to = to;
+  edge[tote].  next = head[from];
+  head[from] = tote;
+} /* 
+init:
+memset(head, 0, sizeof(head))
+tote = 0;
+   */ 
+int main()
+{
+  int ti;
+ scanf("%d",&ti);
+  for(int it = 1;it <= ti;it++)
+    {
+      int n;
+      scanf("%d",&n);
+      queue<int> q;
+      for(int i = 1;i <= n;i++)
+	{
+	  char str[20000];
+	  getchar();
+	  scanf("%s", str);
+	  for(int j = 0;j < n;j++)
+	    {
+	      if(str[j] == '1')
+		{
+		  in[j + 1] ++;
+		  addedge(i, j + 1);
+		}
+	    }
+	}
+      for(int i = 1;i <= n;i++)
+	{
+	  if(in[i] == 0)
+	    q.push(i);
+	}
+      int cnt = 0;
+      while(!q.empty())
+	{
+	  cnt++;
+	  int k = q.front();
+	  q.pop();
+	  for(int i = head[k];i != 0;i = edge[i].  next)
+	    {
+	      in[edge[i].  to] --;
+	      if(in[edge[i].  to] == 0)
+		q.push(edge[i].  to);
+	    }
+	}
+      if(cnt == n)
+	{
+		printf("Case #%d: Yes",it);
+	  
+	}
+      else
+	printf("Case #%d: No",it);
+      memset(head, 0, sizeof(head));
+      memset(in, 0, sizeof(in));
+      memset(edge, 0, sizeof(edge));
+      tote = 0;
+    }
+  return 0;
+}
+```
+
+AC的代码
+```cpp
+
+
+#include<queue>
+#include<cstdio>
+#include<cstring>
+using namespace std;
+int head[2001], in[2001], tote;
+struct EDGE{
+  int to, next;
+}edge[2000001];
+
+void addedge(int from, int to)
+{
+  edge[ ++tote].  to = to;
+  edge[tote].  next = head[from];
+  head[from] = tote;
+}
+int main()
+{
+  int ti;
+ scanf("%d",&ti);
+  for(int it = 1;it <= ti;it++)
+    {
+      tote = 0;
+      memset(head, 0, sizeof(head));
+      memset(in, 0, sizeof(in));
+      /*--------------input--------------*/ 
+      int n;
+      scanf("%d",&n);
+      char str[20000];
+      for(int i = 1;i <= n;i++)
+	{
+	  getchar();
+	  scanf("%s", str);
+	  for(int j = 0;j < n;j++)
+	    {
+	      if(str[j] == '1')
+		{
+		  in[j + 1] ++;
+		  addedge(i, j + 1);
+		}
+	    }
+	}
+      /*---------------topo--------------*/
+      queue<int> q;
+      for(int i = 1;i <= n;i++)
+	{
+	  if(in[i] == 0)
+	    q.push(i);
+	}
+      int cnt = 0;
+      while(!q.empty())
+	{
+	  cnt++;
+	  int k = q.front();
+	  q.pop();
+	  for(int i = head[k];i != 0;i = edge[i].  next)
+	    {
+	      in[edge[i].  to] --;
+	      if(in[edge[i].  to] == 0)
+		q.push(edge[i].  to);
+	    }
+	}
+      /*--------------output-------------*/ 
+      if(cnt == n)
+	{
+		printf("Case #%d: No\n",it);
+	  
+	}
+      else
+	printf("Case #%d: Yes\n",it);
+
+    }
+  return 0;
+}
+```
