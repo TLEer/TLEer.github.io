@@ -111,39 +111,6 @@ button::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
-/* 深色模式按钮设置 */
-#sma {
-  background: #000;
-  width: 38px;
-  height: 38px;
-  display: block;
-  position: fixed;
-  border-radius: 50%;
-  right: 15px;
-  bottom: 170px;
-  padding-top: 15px;
-  margin-bottom: 0;
-  z-index: 998;
-  cursor: pointer;
-}
-#sma .fa-moon-o {
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
-  font-size: 1.48rem !important;
-}
-#sma .fa-lightbulb-o {
-  position: absolute;
-  right: 13px;
-  bottom: 8px;
-  font-size: 1.5rem !important;
-}
-.fa-moon-o:before {
-  content: "\f186";
-}
-.fa-comments:before {
-  content: "\f086";
-}
 @font-face {
   font-family: FontAwesome;
   font-style: normal;
@@ -158,7 +125,7 @@ body,
 }
 body {
   background: #eee;
-  font: 14px/1.6em "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px/1.6em "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 .outer {
@@ -287,7 +254,7 @@ body {
 .widget h5 a:hover,
 .article-entry h6 a:hover,
 .widget h6 a:hover {
-  color: #e32d40;
+  color: #0083f4;
 }
 .article-entry h2,
 .widget h2,
@@ -401,7 +368,7 @@ body {
   font-weight: bold;
 }
 #header {
-  height: 150px;
+  height: 50px;
   position: relative;
   border-bottom: 1px solid #ddd;
 }
@@ -443,7 +410,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #21282e;
+  background: #0083f4;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -460,7 +427,7 @@ body {
 #logo,
 #subtitle {
   text-decoration: none;
-  color: #fff;
+  color: #000;
   font-weight: 300;
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
@@ -468,7 +435,7 @@ body {
   font-size: 40px;
   line-height: 40px;
   letter-spacing: 2px;
-  background: #e32d40;
+  background: #ddd;
   padding: 5px 10px;
   border-radius: 5px;
 }
@@ -591,7 +558,7 @@ body {
   background: none;
   color: #000;
   width: 100%;
-  font: 13px "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 13px "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
   outline: none;
 }
 .search-form-input::-webkit-search-results-decoration,
@@ -662,7 +629,7 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #e32d40;
+  color: #0083f4;
 }
 .article-entry {
   zoom: 1;
@@ -682,15 +649,16 @@ a.article-title:hover {
   line-height: 1.6em;
   margin: 1.6em 0;
 }
-.article-entry body.dark h1,
+.article-entry h1,
 .article-entry h2,
 .article-entry h3,
 .article-entry h4,
 .article-entry h5,
 .article-entry h6 {
   font-weight: bold;
+  font-family: "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
 }
-.article-entry body.dark h1,
+.article-entry h1,
 .article-entry h2,
 .article-entry h3,
 .article-entry h4,
@@ -699,11 +667,11 @@ a.article-title:hover {
   line-height: 1.1em;
   margin: 1.1em 0;
 }
-.article-entry body.dark a {
-  color: rgba(255,255,255,0.6);
+.article-entry a {
+  color: #0083f4;
   text-decoration: none;
 }
-.article-entry body.dark a:hover {
+.article-entry a:hover {
   text-decoration: underline;
 }
 .article-entry ul,
@@ -737,7 +705,7 @@ a.article-title:hover {
   padding: 10px 0;
 }
 .article-entry blockquote {
-  font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
   margin: 1.6em 0;
   padding: 0 0.8em;
   border-left: 4px solid #ddd;
@@ -746,7 +714,7 @@ a.article-title:hover {
 .article-entry blockquote footer {
   font-size: 14px;
   margin: 1.6em 0;
-  font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
 }
 .article-entry blockquote footer cite:before {
   content: "—";
@@ -775,7 +743,7 @@ a.article-title:hover {
 }
 .article-entry .video-container {
   position: relative;
-  padding-top: 56.25%;
+  padding-top: 52.734375%;
   height: 0;
   overflow: hidden;
 }
@@ -800,10 +768,10 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-more-link a:hover {
-  background: #e32d40;
+  background: #0083f4;
   color: #fff;
   text-decoration: none;
-  text-shadow: 0 1px #c01a2b;
+  text-shadow: 0 1px #0069c3;
 }
 .article-footer {
   zoom: 1;
@@ -953,7 +921,7 @@ a.article-title:hover {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font: 14px "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
   padding: 0 15px;
   color: #000;
   outline: none;
@@ -1120,7 +1088,7 @@ a.article-title:hover {
   margin: 50px 0;
 }
 #comments a {
-  color: #e32d40;
+  color: #0083f4;
 }
 .archives-wrap {
   margin: 50px 0;
@@ -1181,7 +1149,7 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #e32d40;
+  color: #0083f4;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -1256,7 +1224,7 @@ a.article-title:hover {
   color: #999;
 }
 #footer a {
-  color: #e32d40;
+  color: #0083f4;
   text-decoration: none;
 }
 #footer a:hover {
@@ -1285,7 +1253,7 @@ a.article-title:hover {
 }
 .article-entry pre,
 .article-entry code {
-  font-family: Monaco, "Source Code Pro", Consolas, Menlo, Consolas, monospace;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
 }
 .article-entry code {
   background: #f0f0f0;
@@ -1349,7 +1317,7 @@ a.article-title:hover {
 }
 .article-entry .gist .gist-file {
   border: none;
-  font-family: Monaco, "Source Code Pro", Consolas, Menlo, Consolas, monospace;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
   margin: 0;
 }
 .article-entry .gist .gist-file .gist-data {
@@ -1372,14 +1340,14 @@ a.article-title:hover {
 .article-entry .gist .gist-file .gist-meta {
   background: #272822;
   color: #75715e;
-  font: 0.85em "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 0.85em "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
   margin-left: 20px;
 }
 .article-entry .gist .gist-file .gist-meta a {
-  color: #e32d40;
+  color: #0083f4;
   font-weight: normal;
 }
 .article-entry .gist .gist-file .gist-meta a:hover {
@@ -1507,7 +1475,7 @@ pre .javascript .function {
 }
 .widget a:hover {
   text-decoration: underline;
-  color: #e32d40;
+  color: #0083f4;
 }
 .widget ul ul,
 .widget ol ul,
