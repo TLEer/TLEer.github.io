@@ -180,9 +180,9 @@ body {
   background: #eee;
 }
 .mobile-nav-on #wrap {
-  left: 280px;
+  left: 200px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   #main {
     display: inline;
     float: left;
@@ -368,7 +368,7 @@ body {
   font-weight: bold;
 }
 #header {
-  height: 50px;
+  height: 60px;
   position: relative;
   border-bottom: 1px solid #ddd;
 }
@@ -379,22 +379,6 @@ body {
   left: 0;
   right: 0;
   height: 40px;
-}
-#header:before {
-  top: 0;
-  background: -webkit-linear-gradient(rgba(0,0,0,0.2), transparent);
-  background: -moz-linear-gradient(rgba(0,0,0,0.2), transparent);
-  background: -o-linear-gradient(rgba(0,0,0,0.2), transparent);
-  background: -ms-linear-gradient(rgba(0,0,0,0.2), transparent);
-  background: linear-gradient(rgba(0,0,0,0.2), transparent);
-}
-#header:after {
-  bottom: 0;
-  background: -webkit-linear-gradient(transparent, rgba(0,0,0,0.2));
-  background: -moz-linear-gradient(transparent, rgba(0,0,0,0.2));
-  background: -o-linear-gradient(transparent, rgba(0,0,0,0.2));
-  background: -ms-linear-gradient(transparent, rgba(0,0,0,0.2));
-  background: linear-gradient(transparent, rgba(0,0,0,0.2));
 }
 #header-outer {
   height: 100%;
@@ -418,24 +402,23 @@ body {
 }
 #header-title {
   text-align: center;
-  height: 40px;
+  height: 26px;
   position: absolute;
   top: 50%;
   left: 0;
-  margin-top: -20px;
+  margin-top: -13px;
 }
 #logo,
 #subtitle {
   text-decoration: none;
-  color: #000;
-  font-weight: 300;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  color: #fff;
+  font-weight: 400;
 }
 #logo {
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 26px;
+  line-height: 26px;
   letter-spacing: 2px;
-  background: #ddd;
+  background: #0083f4;
   padding: 5px 10px;
   border-radius: 5px;
 }
@@ -489,7 +472,7 @@ body {
   font-weight: 300;
   letter-spacing: 1px;
 }
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 639px) {
   .main-nav-link {
     display: none;
   }
@@ -500,7 +483,7 @@ body {
 #main-nav-toggle:before {
   content: "\f0c9";
 }
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 639px) {
   #main-nav-toggle {
     display: block;
   }
@@ -536,7 +519,7 @@ body {
   filter: none;
   right: 0;
 }
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 639px) {
   #search-form-wrap {
     width: 100%;
     right: -100%;
@@ -833,7 +816,7 @@ a.article-title:hover {
 #article-nav:after {
   clear: both;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   #article-nav {
     margin: 50px 0;
   }
@@ -866,20 +849,20 @@ a.article-title:hover {
 .article-nav-link-wrap:hover {
   color: #000;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .article-nav-link-wrap {
     width: 50%;
     margin-top: 0;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   #article-nav-newer {
     float: left;
     text-align: right;
     padding-right: 20px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   #article-nav-older {
     float: right;
     text-align: left;
@@ -1113,14 +1096,14 @@ a.article-title:hover {
   -moz-column-gap: 10px;
   column-gap: 10px;
 }
-@media screen and (min-width: 480px) and (max-width: 767px) {
+@media screen and (min-width: 640px) and (max-width: 959px) {
   .archives {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .archives {
     -webkit-column-count: 3;
     -moz-column-count: 3;
@@ -1205,7 +1188,7 @@ a.article-title:hover {
 #page-nav .page-number {
   display: inline-block;
 }
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 639px) {
   #page-nav .page-number {
     display: none;
   }
@@ -1413,18 +1396,18 @@ pre .keyword,
 pre .javascript .function {
   color: #66d9ef;
 }
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 639px) {
   #mobile-nav {
     position: absolute;
     top: 0;
     left: 0;
-    width: 280px;
+    width: 200px;
     height: 100%;
     background: #191919;
     border-right: 1px solid #fff;
   }
 }
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 639px) {
   .mobile-nav-link {
     display: block;
     color: #999;
@@ -1449,7 +1432,7 @@ pre .javascript .function {
     display: none !important;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   #sidebar {
     display: inline;
     float: left;
