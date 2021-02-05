@@ -118,6 +118,43 @@ button::-moz-focus-inner {
   src: url("fonts/fontawesome-webfont.eot?v=#4.0.3");
   src: url("fonts/fontawesome-webfont.eot?#iefix&v=#4.0.3") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff?v=#4.0.3") format("woff"), url("fonts/fontawesome-webfont.ttf?v=#4.0.3") format("truetype"), url("fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.0.3") format("svg");
 }
+@font-face {
+  font-family: 'Fira Code';
+  src: url("../font/FiraCode-Light.woff2") format('woff2'), url("../font/FiraCode-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Code Regular';
+  src: url("../font/FiraCode-Regular.woff2") format('woff2'), url("../font/FiraCode-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url("../font/FiraCode-Medium.woff2") format('woff2'), url("../font/FiraCode-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url("../font/FiraCode-SemiBold.woff2") format('woff2'), url("../font/FiraCode-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url("../font/FiraCode-Bold.woff2") format('woff2'), url("../font/FiraCode-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Code VF';
+  src: url("../font/FiraCode-VF.woff2") format('woff2-variations'), url("../font/FiraCode-VF.woff") format('woff-variations');
+/* font-weight requires a range: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide#Using_a_variable_font_font-face_changes */
+  font-weight: 300 700;
+  font-style: normal;
+}
 html,
 body,
 #container {
@@ -125,7 +162,7 @@ body,
 }
 body {
   background: #eee;
-  font: 14px/1.6em "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font: 14px/1.6em "SF Compact Text", "Fira Code", "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 .outer {
@@ -541,7 +578,7 @@ body {
   background: none;
   color: #000;
   width: 100%;
-  font: 13px "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font: 13px "Fira Code Retina", Monaco, "Source Code Pro", Consolas, Menlo, Consolas, monospace;
   outline: none;
 }
 .search-form-input::-webkit-search-results-decoration,
@@ -563,6 +600,15 @@ body {
 .search-form-submit:focus {
   color: #777;
 }
+@charset "UTF-8";
+ 
+@font-face {
+  font-family: "SF Compact Text";
+  src: url("../font/sf-compact-regular.otf") format("otf"),
+  font-weight: normal;
+  font-style: normal;
+}
+
 .article {
   margin: 50px 0;
 }
@@ -639,7 +685,7 @@ a.article-title:hover {
 .article-entry h5,
 .article-entry h6 {
   font-weight: bold;
-  font-family: "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font-family: "Fira Code Retina", Monaco, "Source Code Pro", Consolas, Menlo, Consolas, monospace;
 }
 .article-entry h1,
 .article-entry h2,
@@ -688,7 +734,7 @@ a.article-title:hover {
   padding: 10px 0;
 }
 .article-entry blockquote {
-  font-family: "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font-family: "Fira Code Retina", Monaco, "Source Code Pro", Consolas, Menlo, Consolas, monospace;
   margin: 1.6em 0;
   padding: 0 0.8em;
   border-left: 4px solid #ddd;
@@ -697,7 +743,7 @@ a.article-title:hover {
 .article-entry blockquote footer {
   font-size: 14px;
   margin: 1.6em 0;
-  font-family: "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font-family: "Fira Code Retina", Monaco, "Source Code Pro", Consolas, Menlo, Consolas, monospace;
 }
 .article-entry blockquote footer cite:before {
   content: "—";
@@ -904,7 +950,7 @@ a.article-title:hover {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font: 14px "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font: 14px "Fira Code Retina", Monaco, "Source Code Pro", Consolas, Menlo, Consolas, monospace;
   padding: 0 15px;
   color: #000;
   outline: none;
@@ -1236,7 +1282,7 @@ a.article-title:hover {
 }
 .article-entry pre,
 .article-entry code {
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: "Fira Code Retina", Monaco, "Source Code Pro", Consolas, Menlo, Consolas, monospace;
 }
 .article-entry code {
   background: #f0f0f0;
@@ -1300,7 +1346,7 @@ a.article-title:hover {
 }
 .article-entry .gist .gist-file {
   border: none;
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: "Fira Code Retina", Monaco, "Source Code Pro", Consolas, Menlo, Consolas, monospace;
   margin: 0;
 }
 .article-entry .gist .gist-file .gist-data {
@@ -1323,7 +1369,7 @@ a.article-title:hover {
 .article-entry .gist .gist-file .gist-meta {
   background: #272822;
   color: #75715e;
-  font: 0.85em "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font: 0.85em "Fira Code Retina", Monaco, "Source Code Pro", Consolas, Menlo, Consolas, monospace;
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
