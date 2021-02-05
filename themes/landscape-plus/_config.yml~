@@ -1,0 +1,43 @@
+# Header
+menu:
+  Home: /
+  Archives: /archives
+  About: /about
+rss: /atom.xml
+
+# Content
+excerpt_link: Read More
+fancybox: true
+mathjax: true
+auto_excerpt:
+  enable: true # 自动摘录，开启，暂时没发现bug
+  length: 150
+
+# Sidebar
+sidebar: right
+widgets:
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
+- links
+
+# Links
+links:
+  洛谷: https://luogu.com.cn
+  steam: https://steampowered.com
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+twitter:
+google_plus:
+fb_admins: 
+fb_app_id:
+
+# Duoshuo
+duoshuo_shortname: reqianduan
+
+# Baidu share
+baidushare: true

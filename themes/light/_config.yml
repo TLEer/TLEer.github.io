@@ -1,0 +1,44 @@
+menu:
+  Home: /index.html
+  Archives: archives
+  About: /about
+
+widgets:
+- search
+- category
+- tag
+- tagcloud
+
+excerpt_link: Read More
+
+twitter:
+  username: Steve Feng
+  show_replies: false
+  tweet_count: 5
+
+addthis:
+  enable: true
+  pubid:
+  facebook: true
+  twitter: true
+  google: true
+  pinterest: true
+
+fancybox: true
+
+google_analytics:
+rss:
+
+comment_provider: gitment
+# Facebook comment
+gitment:
+  enable: true
+  mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
+  count: true # Show comments count in post meta area
+  lazy: false # Comments lazy loading with a button
+  cleanly: false # Hide 'Powered by ...' on footer, and more
+  language: # Force language, or auto switch by theme
+  github_user: TLEer
+  github_repo: comment
+  client_id: a0b8ae24f7f4364e2c9c
+  client_secret: 5897ae35b949ea2af76c716845cdeff3f02ea916
