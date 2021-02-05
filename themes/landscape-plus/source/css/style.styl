@@ -23,6 +23,12 @@ input, button
        url(font-icon-path + ".svg#fontawesomeregular?v=#" + font-icon-version) format("svg")
 
 @font-face {
+  font-family: 'PingFangTLE';
+  src: url("/font/PingFang-TLE.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Fira Code';
   src: url('/font/FiraCode-Light.woff2') format('woff2'),
     url("/font/FiraCode-Light.woff") format("woff");
@@ -71,12 +77,14 @@ input, button
   font-style: normal;
 }
 
+
+
 html, body, #container
   height: 100%
 
 body
   background: color-background
-  font: font-size/line-height "SF Compact Text","Fira Code","LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font: font-size/line-height "PingFangTLE","Fira Code","LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
   -webkit-text-size-adjust: 100%
 
 .outer
