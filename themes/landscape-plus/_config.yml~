@@ -5,6 +5,8 @@ menu:
   About: /about
 rss: /atom.xml
 
+font: enable
+
 # Content
 excerpt_link: Read More
 fancybox: true
@@ -41,4 +43,4 @@ fb_app_id:
 duoshuo_shortname: reqianduan
 
 # Baidu share
-baidushare: true
+baidushare: false

@@ -33,7 +33,7 @@ links:
 
 # Miscellaneous
 google_analytics:
-favicon: /favicon.png
+favicon: /favicon.ico
 twitter:
 google_plus:
 fb_admins: 
@@ -43,4 +43,4 @@ fb_app_id:
 duoshuo_shortname: reqianduan
 
 # Baidu share
-baidushare: true
+baidushare: false

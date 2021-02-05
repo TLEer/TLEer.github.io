@@ -24,7 +24,7 @@ input, button
 
 @font-face {
   font-family: 'PingFangTLE';
-  src: url("/font/PingFang-TLE.woff") format("woff");
+  src: url("/font/PingFang-TLE.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
