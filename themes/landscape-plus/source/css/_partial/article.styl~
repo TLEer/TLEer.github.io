@@ -1,4 +1,3 @@
-@import "../SF-compact-text.css"
 .article
   margin: block-margin 0
 

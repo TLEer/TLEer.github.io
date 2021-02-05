@@ -76,7 +76,7 @@ html, body, #container
 
 body
   background: color-background
-  font: font-size/line-height "SF Compact Text","Fira Code","LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font: font-size/line-height "SF Compact Text","Fira Code Retina","LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
   -webkit-text-size-adjust: 100%
 
 .outer
