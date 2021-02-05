@@ -32,8 +32,8 @@ input, button
 
 @font-face {
   font-family: 'Fira Code Regular';
-  src: url('../font/FiraCode-Regular.woff2') format('woff2'),
-    url("../font/FiraCode-Regular.woff") format("woff");
+  src: url('/font/FiraCode-Regular.woff2') format('woff2'),
+    url("/font/FiraCode-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -76,7 +76,7 @@ html, body, #container
 
 body
   background: color-background
-  font: font-size/line-height "SF Compact Text","Fira Code Retina","LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font: font-size/line-height "SF Compact Text","Fira Code","LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
   -webkit-text-size-adjust: 100%
 
 .outer
