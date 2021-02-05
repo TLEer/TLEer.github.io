@@ -5,6 +5,8 @@ menu:
   About: /about
 rss: /atom.xml
 
+font: enable
+
 # Content
 excerpt_link: Read More
 fancybox: true

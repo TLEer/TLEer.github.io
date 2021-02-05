@@ -9,6 +9,7 @@ rss: /atom.xml
 excerpt_link: Read More
 fancybox: true
 mathjax: true
+excerpt_length: 150
 auto_excerpt:
   enable: true # 自动摘录，开启，暂时没发现bug
   length: 150
