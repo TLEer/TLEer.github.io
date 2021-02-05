@@ -125,6 +125,12 @@ button::-moz-focus-inner {
   font-style: normal;
 }
 @font-face {
+  font-family: 'GoogleSans';
+  src: url("/font/GoogleSans-Regular.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Fira Code';
   src: url("/font/FiraCode-Light.woff2") format('woff2'), url("/font/FiraCode-Light.woff") format("woff");
   font-weight: 300;
@@ -168,7 +174,7 @@ body,
 }
 body {
   background: #eee;
-  font: 14px/1.6em "PingFangTLE", "Fira Code", "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
+  font: 14px/1.6em "GoogleSans", "PingFangTLE", "Fira Code", "LiHei Pro Medium", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, Simhei, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 .outer {
